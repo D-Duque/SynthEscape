@@ -127,40 +127,6 @@ Light:
     type: 3}
   m_PrefabInstance: {fileID: 6988588337687572263}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1281990959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1411380736391934541, guid: 6602ab43ca681a34d9314bc8f1708d19,
-    type: 3}
-  m_PrefabInstance: {fileID: 4495020599323473731}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1281990960
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281990959}
-  serializedVersion: 2
-  m_Mass: 0.2
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1281990962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281990959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70194c74dcdb91042b1e8b56d99021d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1324980629108876534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,16 +134,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 537671267848493081, guid: 97aabc8cd2e335d4288c8e66b75e7e92,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407766183396090361, guid: 97aabc8cd2e335d4288c8e66b75e7e92,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4383215518711147044, guid: 97aabc8cd2e335d4288c8e66b75e7e92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -385,6 +341,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 968992841985792325, guid: 6602ab43ca681a34d9314bc8f1708d19,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968992841985792325, guid: 6602ab43ca681a34d9314bc8f1708d19,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968992841985792325, guid: 6602ab43ca681a34d9314bc8f1708d19,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1411380736391934541, guid: 6602ab43ca681a34d9314bc8f1708d19,
         type: 3}
       propertyPath: m_Name
@@ -398,7 +369,7 @@ PrefabInstance:
     - target: {fileID: 2814390325479302796, guid: 6602ab43ca681a34d9314bc8f1708d19,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.41
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: 2814390325479302796, guid: 6602ab43ca681a34d9314bc8f1708d19,
         type: 3}
