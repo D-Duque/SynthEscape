@@ -5,6 +5,7 @@ public class Rocket : MonoBehaviour
 {
     [SerializeField] float rcsThrust = 100f;
     [SerializeField] float mainThrust = 100f;
+    [SerializeField] float levelLoadDelay = 2f;
 
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip success;
@@ -20,6 +21,8 @@ public class Rocket : MonoBehaviour
     
     enum State { Alive, Dying, Transcending }
     State state = State.Alive;
+
+    bool collisionsDisabled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,11 +40,16 @@ public class Rocket : MonoBehaviour
             RespondtoThrustInput();
             RespondtoRotateInput();
         }
+        if (Debug.isDebugBuild)
+        {
+            RespondToDebugKeys();
+        }
+        
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (state != State.Alive)
+        if (state != State.Alive || collisionsDisabled)
         {
             return; // leaves OnCollisionEnter function if state is not alive.
         }
@@ -65,7 +73,7 @@ public class Rocket : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(success);
         successParticles.Play();
-        Invoke("LoadNextLevel", 1f); // parameterize time
+        Invoke("LoadNextLevel", levelLoadDelay); //parameterizing load delay
     }
 
     private void StartDeathSequence()
@@ -74,7 +82,7 @@ public class Rocket : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(death);
         deathParticles.Play();
-        Invoke("LoadFirstLevel", 1f);
+        Invoke("LoadFirstLevel", levelLoadDelay); //parameterizing load delay
     }
 
    
@@ -131,5 +139,18 @@ public class Rocket : MonoBehaviour
         rigidBody.freezeRotation = false; //resume physics control of rotation
     }
 
-    
+    //debug keys
+
+    private void RespondToDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionsDisabled = !collisionsDisabled; // toggle
+        }
+    }   
 }
