@@ -21,19 +21,20 @@ public class CameraFollow : MonoBehaviour
     {
         // sets camera follow rules by level
         Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
 
-        if (sceneName == "Level 3")
+        int buildIndex = currentScene.buildIndex;
+
+        switch (buildIndex)
         {
-            FollowXAxis();
-        }
-        else if (sceneName == "Level 4")
-        {
-            FollowXAndYAxis();
-        }
-        else if (sceneName == "Level 5")
-        {
-            FollowXAndYAxis();
+            case 3:
+                FollowXAndYAxis();
+                break;
+            case 4:
+                FollowXAndYAxis();
+                    break;
+            default:
+                FollowXAxis();
+                    break;
         }
     }
 
